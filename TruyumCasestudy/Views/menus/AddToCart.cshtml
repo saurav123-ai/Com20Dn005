@@ -1,0 +1,49 @@
+﻿@model Truyumcasestudy.Models.menu
+
+@{
+    ViewBag.Title = "AddToCart";
+}
+
+<h2>AddToCart</h2>
+
+@using (Html.BeginForm())
+{
+<table class="table">
+    <tr>
+        <th>
+           
+            Menu_name
+        </th>
+        <th>
+           
+            Price
+        </th>
+
+       
+
+        <th> Quantity</th>
+    </tr>
+
+    {
+        <tr>
+            <td>
+                
+                @Model.menu_name
+            </td>
+            <td>
+                
+                @Model.price
+            </td>
+
+           
+
+            <td>
+
+               <input type="number" name="qty" value="0" id="qty" />
+            <input type="submit" value="Confirm" class="btn bth-default" />
+            </td>
+        </tr>
+    }
+
+</table>
+}

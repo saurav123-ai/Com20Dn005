@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+
+@if (TempData["cart"] != null)
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Menu Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in TempData["cart"] as List<Truyumcasestudy.Models.Item>)
+            {
+            <tr>
+                <td>
+                    @item.menu_name
+                </td>
+                <td>
+                    @item.price
+                </td>
+                <td>
+                    @item.quantity
+                </td>
+                <td>@Html.ActionLink("Remove", "Deletefromcart", new { id = item.menu_id })</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+<h3> Cart is Empty....</h3>
+}
